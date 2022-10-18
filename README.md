@@ -2,6 +2,7 @@
   - [cltv语录](https://www.charliebbs.com/furudesatoko/yuan-tou-cltvyuan-you-de-automodyu-lu-1b12)
   - [chonglangTV语录](https://scored.co/c/chonglangTV/p/142AwK6LMx/rchonglangtv-20192022-html/c)
   - [baomiTV语录](https://scored.co/c/chonglangTV/p/15JTb2hn6I/rbaomitv/c)
+  - 如果上述地址无法打开，这里有github的备份 [备份](https://github.com/chonglang-TV/chonglangTV_full_backup)
 
 # What does this bot do
   监听几个subreddit的最新post和comment，根据冲浪tv之前的mod关键词自动回复，重铸冲浪荣光，我辈义不容辞
@@ -31,7 +32,6 @@
       nohup python3 reply_comment.py &
       nohup python3 reply_submission.py &
     ```
-     - 另外comment回复被拉黑的会报错，其他不知道什么情况也会报错，exceptions捕捉不到，然后退出执行。
 
 # Dir list
 ```

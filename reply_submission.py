@@ -60,7 +60,7 @@ def process_latest_submission(submission):
                                 submission.reply(body = str)
                             else:
                                 submission.reply(body = data_item['comment'][random_comment_index])
-                        except Forbidden:
+                        except praw.exceptions.RedditAPIException:
                             print('comment error, u have been banned from', submission.subreddit)
                         break
             if reply_flag:
@@ -76,7 +76,7 @@ def process_latest_submission(submission):
                         reply_flag = True
                         try:
                             submission.reply(body = data_item['comment'])
-                        except Forbidden:
+                        except praw.exceptions.RedditAPIException:
                             print('comment error, u have been banned from', submission.subreddit)
                         break
             if reply_flag:

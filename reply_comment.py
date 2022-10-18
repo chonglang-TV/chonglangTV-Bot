@@ -1,7 +1,6 @@
 from random import randint
 import praw
 import json
-import datetime
 from prawcore.exceptions import Forbidden
 from functools import reduce
 
@@ -70,10 +69,8 @@ def process_latest_comment(comment):
                                 str = "《大的来了》是荒诞戏剧的代表作。以几个鼠人苦等“大的”，而“大的”不来的情节，喻示人生是一场无尽无望的等待，表达了世界荒诞、人生痛苦的存在主义思想。它发生的时间地点都是模糊的，布景也是一片荒凉，他们一边等，一边用各种无意义的手段打发时光。他们经常显得头脑一片混乱，缺乏思维能力，尤其是极度地惧怕孤独。当有人询问“大的代表什么”时， u/" + comment.author.name + " 说：“我要是知道，早就说出来了。”\n"
                                 comment.reply(str)
                             else:
-                                print(datetime.datetime.now().strftime('%Y-%m-%d %H:%M:%S'), 4444)
                                 comment.reply(data_item['comment'][random_comment_index])
-                        except Forbidden:
-                            print(datetime.datetime.now().strftime('%Y-%m-%d %H:%M:%S'), 3333)
+                        except praw.exceptions.RedditAPIException:
                             print('comment error, u have been banned from', comment.subreddit)
                         break
             if reply_flag:
@@ -89,9 +86,7 @@ def process_latest_comment(comment):
                         reply_flag = True
                         try:
                             comment.reply(data_item['comment'])
-                            print(datetime.datetime.now().strftime('%Y-%m-%d %H:%M:%S'), 1111)
-                        except Forbidden:
-                            print(datetime.datetime.now().strftime('%Y-%m-%d %H:%M:%S'), 2222)
+                        except praw.exceptions.RedditAPIException:
                             print('comment error, u have been banned from', comment.subreddit)
                         break
             if reply_flag:

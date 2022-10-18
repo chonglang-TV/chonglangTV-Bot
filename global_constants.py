@@ -8,11 +8,10 @@ CLIENT_ID = ''
 CLIENT_SECRET = ''
 
 # 监听的subs，多个sub用+隔开
-MONITOR_SUBS = 'baomitv+youmotv'
+MONITOR_SUBS = 'chonglangtv+cltv+quanlangtv+baomitv+youmotv+youmo'
 
-# chonglangHTML文件地址, 重新爬取chonglangTV语录时用
-CHONGLANG_HTML_PATH = '/Downloads/baomitv'
-# CHONGLANG_HTML_PATH = '/Downloads/chonglangTV_full_backup'
+# chonglangHTML文件夹地址, 重新爬取chonglangTV语录时用，如 /home/luuthink/project/chonglangTV_full_backup
+CHONGLANG_HTML_PATH = ''
 
 __all__ = [
   USER_NAME,

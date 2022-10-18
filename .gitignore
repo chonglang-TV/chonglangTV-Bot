@@ -1,0 +1,10 @@
+# 运行缓存
+__pycache__
+.DS_Store
+
+# 日志
+**/nohup.err
+**/nohup.out
+
+# 个人信息
+global_constants.txt
